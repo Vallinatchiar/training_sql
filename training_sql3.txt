@@ -1,0 +1,63 @@
+1. Find employees who are in the ‘IT’ department.
+Hint: Use INNER JOIN with a WHERE clause filtering dept_name = 'IT'.
+
+emp_id name dept_name
+1      Ravi   IT
+3      Karan  IT
+
+	select emp_id ,name ,dept_name from employees inner join departments on employees.dept_id = departments.dept_id where department.dept_name='IT'
+
+
+
+
+3. List departments with no employees.
+Hint: Use LEFT JOIN or RIGHT JOIN and check for NULL employee IDs.
+
+dept_id dept_name
+104     Marketing
+
+	select dept_id ,dept_name from department left join employees on department.dept_id =  employees.dept_id ;
+	
+
+
+4. Show each employee’s name along with every department they could
+potentially work in.
+Hint: Use CROSS JOIN to get all combinations.
+
+name dept_name
+Ravi  IT
+Ravi  HR
+Ravi  Finance
+Ravi  Marketing
+Priya IT
+...   ...
+
+
+		select name , dept_name  from employees cross join department;
+
+
+
+5. Get all employees and all departments (even if no match).
+Hint: Use FULL OUTER JOIN (or UNION of LEFT and RIGHT JOIN in MySQL).
+
+name dept_name
+Ravi IT
+Karan IT
+Priya HR
+Anjali Finance
+Manish
+Marketing
+
+
+ 		select name , dept_name fromemployees full outer join departments 		on employees.dept_id = department.dept_id;
+
+
+
+6. Find employees who do not belong to any department.
+Hint: Use LEFT JOIN and filter where department ID is NULL.
+	emp_id  name
+	5       Manish
+
+
+	select emp_id , name from employees left join departments on employees.dept_id = department.dept_id where departments.dept_id == null;
+
