@@ -1,0 +1,60 @@
+PRODUCT TABLE
+
+
+1. Retrieve all columns from the product table.
+		select * from product ;
+
+2. Retrieve the product_name and unit_price from the Products table.
+		select product_name , unit_price from product ;
+
+3. Filter the Products table to show only products in the &#39;Electronics&#39; category.
+		select product from electronics where category = electronics;
+
+4. Retrieve the product_id and product_name from the Products table for products with a unit_price greater than $100.
+		select product_id ,product_name from product where unit_price > 100;
+
+5. Calculate the average unit_price of products in the Products table.
+		select avg(unit_price) from product;
+
+6. Retrieve product_name and unit_price from the Products table with the Highest Unit Price
+		select product_name , unit_price from product where max(unit_price);
+
+7. Retrieve the product_name and unit_price from the Products table, ordering the results by unit_price in descending order.
+		 select product_name , unit_price from products order by desc;
+
+
+8. Retrieve the product_name and unit_price from the Products table, filtering the unit_price to show only values between $20 and $600.
+		select product_name , unit_price from  Products where unit_price between 20 and 600;
+
+9. Retrieve the product_name and category from the Products table, ordering the results by category in ascending order.
+		select product_name , category from  Products order by asc;
+
+
+
+SALES TABLE
+
+
+
+1. Retrieve all columns from the Sales table.
+		select * from sales ;
+
+2. Retrieve the sale_id and sale_date from the Sales table.
+		select sale_id , sale_date  from sales ;
+
+3. Filter the Sales table to show only sales with a total_price greater than $100.
+		select * from sales where total_price > 100;
+
+4. Retrieve the sale_id and total_price from the Sales table for sales made on January 3, 2024.
+		select sale_id , total_price from  Sales where sale_date=		2024-01-03 ;
+
+5. Calculate the total revenue generated from all sales in the Sales table.
+		select total=sum(total_price)*quantity_sold from sales ;
+
+6. Calculate the total quantity_sold from the Sales table.
+		select sum(quantity_sold) from sales;
+
+7. Retrieve the sale_id, product_id, and total_price from the Sales table for sales with a quantity_sold greater than 4.
+		select sale_id, product_id, total_price from sales where 			quantity_sold > 4;
+8.  Calculate the average total_price of sales in the Sales table.
+		select avg(total_price) from sales;
+	
